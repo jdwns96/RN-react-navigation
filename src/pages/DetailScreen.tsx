@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {View, Button, Text, StyleSheet} from 'react-native';
 
 import type {RootStackParamList} from '../../App';
@@ -10,6 +10,12 @@ type Props = NativeStackScreenProps<RootStackParamList, 'Detail'>;
 // push 스택
 export default function DetailScreen(props: Props) {
   const {route, navigation} = props;
+
+  useEffect(() => {
+    // little bit slow
+    navigation.setOptions({title: `상세 - ${route.params?.id}`});
+  }, [navigation]);
+
   return (
     <View style={styles.block}>
       <Text style={styles.text}>id: {route.params?.id}</Text>
