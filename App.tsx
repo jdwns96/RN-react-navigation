@@ -15,7 +15,7 @@ import DetailScreen from './src/pages/DetailScreen';
 
 export type RootStackParamList = {
   Home: undefined;
-  Detail: undefined;
+  Detail: {id: number} | undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
