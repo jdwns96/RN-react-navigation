@@ -10,7 +10,12 @@ export default function HomeScreen(props: Props) {
   const {navigation} = props;
   return (
     <View>
-      <Button title="Detail 열기" />
+      <Button
+        title="Detail 열기"
+        onPress={() => {
+          navigation.navigate('Detail');
+        }}
+      />
     </View>
   );
 }
